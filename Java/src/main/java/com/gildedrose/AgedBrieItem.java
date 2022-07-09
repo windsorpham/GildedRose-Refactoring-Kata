@@ -15,8 +15,11 @@ public class AgedBrieItem extends Item implements IItem{
 		
 		sellIn = sellIn -1;
 		
+		//I think this is a bug, because there is not describing about increases faster
+		/*
 		if (sellIn < 0 && quality < 50) {
         	quality = quality + 1;
         }
+        */
 	}
 }
