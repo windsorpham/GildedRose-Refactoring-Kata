@@ -16,21 +16,21 @@ public class ConjuredItemTest {
 	@Test
     void itShouldDecrementSellIn() {
 		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 6);
-		item.updateQuality();
+		item.update();
         assertEquals(2, item.sellIn);
     }
 	
 	@Test
     void itShouldDecrementQuality2() {
 		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 6);
-		item.updateQuality();
+		item.update();
         assertEquals(4, item.quality);
     }
 	
 	@Test
     void itShouldQualityNotNegative() {
 		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 1);
-		item.updateQuality();
+		item.update();
         assertEquals(0, item.quality);
     }
 }

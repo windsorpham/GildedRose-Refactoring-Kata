@@ -16,14 +16,14 @@ public class SulfurasItemTest {
 	@Test
     void itShouldNotChangeSellIn() {
 		SulfurasItem item = new SulfurasItem("Sulfuras, Hand of Ragnaros", 2, 80);
-		item.updateQuality();
+		item.update();
         assertEquals(2, item.sellIn);
     }
 	
 	@Test
     void itShouldNotChangeQuality() {
 		SulfurasItem item = new SulfurasItem("Sulfuras, Hand of Ragnaros", 2, 80);
-		item.updateQuality();
+		item.update();
         assertEquals(80, item.quality);
     }
 }

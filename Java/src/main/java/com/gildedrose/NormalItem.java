@@ -1,18 +1,39 @@
 package com.gildedrose;
 
-public class NormalItem extends Item implements IItem{
-
+public class NormalItem extends Item{
+	public static final int MAX_QUALITY = 50;
+	public static final int TEN_DAYS = 10;
+	public static final int FIVE_DAYS = 5;
+	public static final int SELLIN_DAY_OVERDUE = 0;
+	
 	public NormalItem(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}
-
-	@Override
-	public void updateQuality() {
-		sellIn = sellIn -1;
-		if(quality > 0)
-			quality = quality - 1;
-		if(sellIn < 0 && quality > 0)
-			quality = quality - 1;
+	
+	protected void update() {
+		setQuality();
+		decrementSellIn();
 	}
 
+	private void decrementSellIn() {
+		sellIn = sellIn - 1;
+	}
+
+	protected boolean overdue() {
+		return sellIn <= SELLIN_DAY_OVERDUE;
+	}
+
+	private void setQuality() {
+		calQuality();
+	    quality = Math.max(0, Math.min(MAX_QUALITY, quality));
+	}
+	
+	protected void calQuality() {
+		if(overdue())
+		{
+			quality = quality - 2;
+		}
+		else 
+			quality = quality - 1;
+	}
 }

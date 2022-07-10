@@ -9,7 +9,7 @@ public class ItemFactoryTest {
     void testAgedBrieItemSuccess() {
 		ItemFactory itemFactory = new ItemFactory();
 		Item item  = new Item ("Aged Brie", 2, 0);
-    	IItem agedBrieItem = itemFactory.getItem(item);
+		NormalItem agedBrieItem = itemFactory.getItem(item);
         assertEquals(AgedBrieItem.class, agedBrieItem.getClass());
     }
 	
@@ -17,7 +17,7 @@ public class ItemFactoryTest {
     void testBackstagePassesItemSuccess() {
 		ItemFactory itemFactory = new ItemFactory();
 		Item item  = new Item ("Backstage passes to a TAFKAL80ETC concert", 15, 20);
-    	IItem backstagePassesItem = itemFactory.getItem(item);
+		NormalItem backstagePassesItem = itemFactory.getItem(item);
         assertEquals(BackstagePassesItem.class, backstagePassesItem.getClass());
     }
 	
@@ -25,7 +25,7 @@ public class ItemFactoryTest {
     void testSulfurasItemSuccess() {
 		ItemFactory itemFactory = new ItemFactory();
 		Item item  = new Item ("Sulfuras, Hand of Ragnaros", 0, 80);
-    	IItem sulfurasItem = itemFactory.getItem(item);
+		NormalItem sulfurasItem = itemFactory.getItem(item);
         assertEquals(SulfurasItem.class, sulfurasItem.getClass());
     }
 	
@@ -33,7 +33,7 @@ public class ItemFactoryTest {
     void testConjuredItemSuccess() {
 		ItemFactory itemFactory = new ItemFactory();
 		Item item  = new Item ("Conjured Mana Cake", 3, 6);
-    	IItem conjuredItem = itemFactory.getItem(item);
+		NormalItem conjuredItem = itemFactory.getItem(item);
         assertEquals(ConjuredItem.class, conjuredItem.getClass());
     }
 	
@@ -41,7 +41,7 @@ public class ItemFactoryTest {
     void testNormalItemSuccess() {
 		ItemFactory itemFactory = new ItemFactory();
 		Item item  = new Item ("Elixir of the Mongoose", 5, 7);
-    	IItem normalItem = itemFactory.getItem(item);
+		NormalItem normalItem = itemFactory.getItem(item);
         assertEquals(NormalItem.class, normalItem.getClass());
     }
 }

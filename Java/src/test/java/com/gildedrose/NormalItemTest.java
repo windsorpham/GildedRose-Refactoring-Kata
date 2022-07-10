@@ -16,35 +16,35 @@ public class NormalItemTest {
 	@Test
     void itShouldDecrementSellIn() {
 		NormalItem item = new NormalItem("Elixir of the Mongoose", 5, 7);
-		item.updateQuality();
+		item.update();
         assertEquals(4, item.sellIn);
     }
 	
 	@Test
     void itShouldDecrementQuality1() {
 		NormalItem item = new NormalItem("Elixir of the Mongoose", 5, 7);
-		item.updateQuality();
+		item.update();
         assertEquals(6, item.quality);
     }
 	
 	@Test
     void itShouldDecrementQuality2WhenConjured() {
 		NormalItem item = new NormalItem("Elixir of the Mongoose", -1, 7);
-		item.updateQuality();
+		item.update();
         assertEquals(5, item.quality);
     }
 	
 	@Test
     void itShouldQualityNotNegative() {
 		NormalItem item = new NormalItem("Elixir of the Mongoose", -3, 0);
-		item.updateQuality();
+		item.update();
         assertEquals(0, item.quality);
     }
 	
 	@Test
     void testToStringSuccess() {
 		NormalItem item = new NormalItem("Elixir of the Mongoose", -3, 0);
-		item.updateQuality();
+		item.update();
         assertEquals("Elixir of the Mongoose, -4, 0", item.toString());
     }
 }

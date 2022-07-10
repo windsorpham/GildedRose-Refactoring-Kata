@@ -8,10 +8,10 @@ class GildedRose {
 
     public void updateQuality() {
     	ItemFactory itemFactory = new ItemFactory();
-    	IItem item;
+    	NormalItem item;
     	for (int i = 0; i < items.length; i++) {
     		item = itemFactory.getItem(items[i]);
-    		item.updateQuality();
+    		item.update();
         	this.items[i] = (Item) item;
         }
     }

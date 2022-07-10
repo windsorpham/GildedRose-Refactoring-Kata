@@ -16,21 +16,21 @@ public class AgedBrieItemTest {
 	@Test
     void itShouldDecrementSellIn() {
 		AgedBrieItem item = new AgedBrieItem("Aged Brie", 2, 0);
-		item.updateQuality();
+		item.update();
         assertEquals(1, item.sellIn);
     }
 	
 	@Test
     void itShouldIncrementQuality() {
 		AgedBrieItem item = new AgedBrieItem("Aged Brie", 2, 0);
-		item.updateQuality();
+		item.update();
         assertEquals(1, item.quality);
     }
 	
 	@Test
     void itShouldQualityNotOver50() {
 		AgedBrieItem item = new AgedBrieItem("Aged Brie", 2, 50);
-		item.updateQuality();
+		item.update();
         assertEquals(50, item.quality);
     }
 }

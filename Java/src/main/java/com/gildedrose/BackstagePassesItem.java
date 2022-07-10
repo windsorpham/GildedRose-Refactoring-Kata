@@ -1,31 +1,25 @@
 package com.gildedrose;
 
-public class BackstagePassesItem extends AgedBrieItem implements IItem{
+public class BackstagePassesItem extends NormalItem{
 
 	public BackstagePassesItem(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}
 
 	@Override
-	public void updateQuality() {
-
-		if (sellIn < 11) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-        }
-		
-        if (sellIn < 6) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-        }
-        
-        super.updateQuality();
-        
-        if (sellIn < 0) {
+	public void calQuality() {
+		if (overdue()) {
         	quality = quality - quality;
         }
+		else if (sellIn <= FIVE_DAYS) {
+            quality = quality + 3;
+        }
+		
+		else if (sellIn <= TEN_DAYS) {
+            quality = quality + 2;
+        }
+        else
+        	quality = quality + 1;
 	}
 
 
