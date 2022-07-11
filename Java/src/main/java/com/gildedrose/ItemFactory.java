@@ -5,8 +5,10 @@ public class ItemFactory {
 	public static final String AGED_BRIE = "Aged Brie";
 	public static final String SULFURAS = "Sulfuras";
 	public static final String CONJURED = "Conjured";
-	   
-	public NormalItem getItem(Item itemInput) {
+    private ItemFactory()
+    {
+    }
+	public static final NormalItem getItem(Item itemInput) {
 		if(itemInput.name.contains(AGED_BRIE))
 			return new AgedBrieItem(itemInput.name, itemInput.sellIn, itemInput.quality);
 		else if(itemInput.name.contains(BACKSTAGE_PASSES))
