@@ -7,51 +7,58 @@ import org.junit.jupiter.api.Test;
 public class BackstagePassesItemTest {
 	@Test
     void testSuccess() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 15, 20);
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-        assertEquals(15, item.sellIn);
-        assertEquals(20, item.quality);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
+		BackstagePassesItem item = new BackstagePassesItem(i);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", i.name);
+        assertEquals(15, i.sellIn);
+        assertEquals(20, i.quality);
     }
-	
+
 	@Test
     void itShouldDecrementSellIn() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 15, 20);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
+        BackstagePassesItem item = new BackstagePassesItem(i);
         item.update();
-        assertEquals(14, item.sellIn);
+        assertEquals(14, i.sellIn);
     }
-	
+
 	@Test
     void itShouldIncrementQuality1WhenSellInOver10() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 11, 20);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20);
+        BackstagePassesItem item = new BackstagePassesItem(i);
         item.update();
-        assertEquals(21, item.quality);
+        assertEquals(21, i.quality);
     }
-	
+
 	@Test
     void itShouldIncrementQuality2WhenSellInLessAndEqual10() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 10, 20);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20);
+        BackstagePassesItem item = new BackstagePassesItem(i);
         item.update();
-        assertEquals(22, item.quality);
+        assertEquals(22, i.quality);
     }
-	
+
 	@Test
     void itShouldIncrementQuality3WhenSellInLessAndEqual5() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 5, 20);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20);
+        BackstagePassesItem item = new BackstagePassesItem(i);
         item.update();
-        assertEquals(23, item.quality);
+        assertEquals(23, i.quality);
     }
-	
+
 	@Test
     void itShouldQualityEqual0WhenSellInLess0() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 0, 20);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20);
+        BackstagePassesItem item = new BackstagePassesItem(i);
         item.update();
-        assertEquals(0, item.quality);
+        assertEquals(0, i.quality);
     }
-	
+
 	@Test
     void itShouldQualityNotOver50() {
-		BackstagePassesItem item = new BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", 3, 50);
+        Item i = new Item("Backstage passes to a TAFKAL80ETC concert", 3, 50);
+        BackstagePassesItem item = new BackstagePassesItem(i);
 		item.update();
-        assertEquals(50, item.quality);
+        assertEquals(50, i.quality);
     }
 }

@@ -7,23 +7,26 @@ import org.junit.jupiter.api.Test;
 public class SulfurasItemTest {
 	@Test
     void testSuccess() {
-		SulfurasItem item = new SulfurasItem("Sulfuras, Hand of Ragnaros", 2, 80);
-        assertEquals("Sulfuras, Hand of Ragnaros", item.name);
-        assertEquals(2, item.sellIn);
-        assertEquals(80, item.quality);
+		Item i = new Item("Sulfuras, Hand of Ragnaros", 2, 80);
+        SulfurasItem item = new SulfurasItem(i);
+        assertEquals("Sulfuras, Hand of Ragnaros", i.name);
+        assertEquals(2, i.sellIn);
+        assertEquals(80, i.quality);
     }
-	
+
 	@Test
     void itShouldNotChangeSellIn() {
-		SulfurasItem item = new SulfurasItem("Sulfuras, Hand of Ragnaros", 2, 80);
+        Item i = new Item("Sulfuras, Hand of Ragnaros", 2, 80);
+        SulfurasItem item = new SulfurasItem(i);
 		item.update();
-        assertEquals(2, item.sellIn);
+        assertEquals(2, i.sellIn);
     }
-	
+
 	@Test
     void itShouldNotChangeQuality() {
-		SulfurasItem item = new SulfurasItem("Sulfuras, Hand of Ragnaros", 2, 80);
+        Item i = new Item("Sulfuras, Hand of Ragnaros", 2, 80);
+        SulfurasItem item = new SulfurasItem(i);
 		item.update();
-        assertEquals(80, item.quality);
+        assertEquals(80, i.quality);
     }
 }

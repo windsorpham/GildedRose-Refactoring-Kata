@@ -7,30 +7,34 @@ import org.junit.jupiter.api.Test;
 public class ConjuredItemTest {
 	@Test
     void testSuccess() {
-		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 6);
-        assertEquals("Conjured Mana Cake", item.name);
-        assertEquals(3, item.sellIn);
-        assertEquals(6, item.quality);
+        Item i = new Item("Conjured Mana Cake", 3, 6);
+		ConjuredItem item = new ConjuredItem(i);
+        assertEquals("Conjured Mana Cake", i.name);
+        assertEquals(3, i.sellIn);
+        assertEquals(6, i.quality);
     }
-	
+
 	@Test
     void itShouldDecrementSellIn() {
-		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 6);
+        Item i = new Item("Conjured Mana Cake", 3, 6);
+        ConjuredItem item = new ConjuredItem(i);
 		item.update();
-        assertEquals(2, item.sellIn);
+        assertEquals(2, i.sellIn);
     }
-	
+
 	@Test
     void itShouldDecrementQuality2() {
-		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 6);
+        Item i = new Item("Conjured Mana Cake", 3, 6);
+        ConjuredItem item = new ConjuredItem(i);
 		item.update();
-        assertEquals(4, item.quality);
+        assertEquals(4, i.quality);
     }
-	
+
 	@Test
     void itShouldQualityNotNegative() {
-		ConjuredItem item = new ConjuredItem("Conjured Mana Cake", 3, 1);
+        Item i = new Item("Conjured Mana Cake", 3, 1);
+        ConjuredItem item = new ConjuredItem(i);
 		item.update();
-        assertEquals(0, item.quality);
+        assertEquals(0, i.quality);
     }
 }

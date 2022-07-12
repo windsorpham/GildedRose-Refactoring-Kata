@@ -1,13 +1,18 @@
 package com.gildedrose;
 
-public class SulfurasItem extends NormalItem{
+public class SulfurasItem extends AbstractItem{
 
-	public SulfurasItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public SulfurasItem(Item item) {
+		super(item);
 	}
 
 	@Override
 	public void update() {
 		// not change value
 	}
+
+    @Override
+    public void calQuality() {
+
+    }
 }

@@ -8,10 +8,11 @@ class GildedRoseTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        Item i = new Item("Aged Brie", 2, 0);
+        Item[] items = new Item[] { i};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("foo", app.items[0].name);
+        assertEquals(1, i.quality);
     }
 
 }

@@ -1,13 +1,13 @@
 package com.gildedrose;
 
-public class ConjuredItem extends NormalItem{
+public class ConjuredItem extends AbstractItem{
 
-	public ConjuredItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public ConjuredItem(Item item) {
+		super(item);
 	}
 
 	@Override
 	public void calQuality() {
-		quality = quality - 2;
+		item.quality = item.quality - 2;
 	}
 }

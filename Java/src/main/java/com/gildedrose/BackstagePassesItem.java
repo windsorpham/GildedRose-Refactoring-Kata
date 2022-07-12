@@ -1,25 +1,26 @@
 package com.gildedrose;
 
-public class BackstagePassesItem extends NormalItem{
-
-	public BackstagePassesItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+public class BackstagePassesItem extends AbstractItem{
+    private static final int TEN_DAYS = 10;
+    private static final int FIVE_DAYS = 5;
+	public BackstagePassesItem(Item item) {
+		super(item);
 	}
 
 	@Override
 	public void calQuality() {
 		if (overdue()) {
-        	quality = quality - quality;
+        	item.quality = item.quality - item.quality;
         }
-		else if (sellIn <= FIVE_DAYS) {
-            quality = quality + 3;
+		else if (item.sellIn <= FIVE_DAYS) {
+            item.quality = item.quality + 3;
         }
-		
-		else if (sellIn <= TEN_DAYS) {
-            quality = quality + 2;
+
+		else if (item.sellIn <= TEN_DAYS) {
+            item.quality = item.quality + 2;
         }
         else
-        	quality = quality + 1;
+            item.quality = item.quality + 1;
 	}
 
 

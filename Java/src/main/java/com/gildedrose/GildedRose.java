@@ -7,11 +7,8 @@ class GildedRose {
     }
 
     public void updateQuality() {
-    	NormalItem item;
-    	for (int i = 0; i < items.length; i++) {
-    		item = ItemFactory.getItem(items[i]);
-    		item.update();
-        	this.items[i] = (Item) item;
+        for (Item item : items) {
+            ItemFactory.getItem(item).update();
         }
     }
 
