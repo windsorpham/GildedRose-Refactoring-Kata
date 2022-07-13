@@ -8,16 +8,16 @@ public class ItemFactory {
     private ItemFactory()
     {
     }
-	public static final IItem getItem(Item itemInput) {
+	public static final void update(Item itemInput) {
 		if(itemInput.name.contains(AGED_BRIE))
-			return new AgedBrieItem(itemInput);
+            (new AgedBrieItem(itemInput)).update();
 		else if(itemInput.name.contains(BACKSTAGE_PASSES))
-			return new BackstagePassesItem(itemInput);
+			(new BackstagePassesItem(itemInput)).update();
 		else if(itemInput.name.contains(SULFURAS))
-			return new SulfurasItem(itemInput);
+			(new SulfurasItem(itemInput)).update();
 		else if(itemInput.name.contains(CONJURED))
-			return new ConjuredItem(itemInput);
+            (new ConjuredItem(itemInput)).update();
 		else
-			return new NormalItem(itemInput);
+            (new NormalItem(itemInput)).update();
 	}
 }

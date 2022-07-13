@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public abstract class AbstractItem implements IItem
+public abstract class AbstractItem implements IItemUpdate
 {
     private static final int MAX_QUALITY = 50;
     private static final int SELLIN_DAY_OVERDUE = 0;

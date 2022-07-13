@@ -5,7 +5,7 @@ public class TexttestFixture {
     	final String output = run(args);
         System.out.println(output);
     }
-    
+
     public static String run(String... args) {
     	final StringBuilder out = new StringBuilder();
     	out.append("OMGHAI!"+"\n");

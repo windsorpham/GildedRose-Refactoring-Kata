@@ -1,6 +1,9 @@
 package com.gildedrose;
 
-class GildedRose {
+import com.gildedrose.Item;
+import com.gildedrose.ItemFactory;
+
+public class GildedRose {
     Item[] items;
     public GildedRose(Item[] items) {
     	this.items = items;
@@ -8,7 +11,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            ItemFactory.getItem(item).update();
+            ItemFactory.update(item);
         }
     }
 
